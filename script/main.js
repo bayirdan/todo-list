@@ -2,7 +2,12 @@ const myForm = document.querySelector("#my-form");
 const myList = document.querySelector("#list");
 const myInput = document.querySelector("input[type=text]");
 
-const tasks = [];
+const tasks = JSON.parse(localStorage.getItem("items")) || [];
+if (tasks.length > 0) {
+  tasks.forEach((task) => {
+    addList(task);
+  });
+}
 
 // ADD TASK LISTENER
 myForm.addEventListener("submit", (e) => {
@@ -15,6 +20,7 @@ myForm.addEventListener("submit", (e) => {
     done: false,
   };
   tasks.push(task);
+  localUpdate(tasks);
   myInput.value = "";
   addList(task);
 });
@@ -64,6 +70,7 @@ function addList(task) {
 function taskCheck(taskId) {
   taskIndex = tasks.findIndex((task) => task.id === taskId);
   tasks[taskIndex].done = !tasks[taskIndex].done;
+  localUpdate(tasks);
   addList(tasks[taskIndex]);
 }
 
@@ -72,4 +79,11 @@ function taskDelete(taskId) {
   taskIndex = tasks.findIndex((task) => task.id === taskId);
   tasks.splice(taskIndex, 1);
   myList.children[taskIndex].remove();
+  localUpdate(tasks);
+}
+
+// LOCALSTORAGE UPDATE
+
+function localUpdate(task) {
+  localStorage.setItem("items", JSON.stringify(task));
 }
