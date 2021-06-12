@@ -146,3 +146,15 @@ button.checked + p {
 i {
   pointer-events: none;
 }
+
+@media (max-width: 1200px) {
+  html {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 7px;
+  }
+}
