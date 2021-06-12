@@ -1,0 +1,148 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  font-family: "Annie Use Your Telescope", cursive;
+  color: #333;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #fda494, #ff8974);
+  padding: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10rem;
+}
+
+h1 {
+  text-align: center;
+  font-size: 8rem;
+  margin-top: 5rem;
+  text-shadow: 0 1rem 0.5rem rgba(0, 0, 0, 0.3);
+}
+
+h1 span {
+  background-color: #333;
+  color: #fff;
+  padding: 0 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 1rem 0.5rem rgba(0, 0, 0, 0.3);
+}
+
+form {
+  width: 50rem;
+  height: 8em;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1rem 0.5rem rgba(0, 0, 0, 0.3);
+}
+
+form input,
+form button {
+  border: none;
+  height: 5rem;
+  font-size: 3rem;
+  color: #333;
+}
+
+form input {
+  flex: 1;
+  outline: none;
+  font-family: "Annie Use Your Telescope", cursive;
+  font-weight: bolder;
+  letter-spacing: 2px;
+}
+
+form input::placeholder {
+  opacity: 0.3;
+}
+
+form button {
+  width: 5rem;
+  height: 5rem;
+  background-color: #fff;
+  border-radius: 0.5rem;
+}
+
+form button:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+ul li {
+  width: 60rem;
+  height: 6rem;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  background-color: #fff;
+  box-shadow: 0 1rem 0.5rem rgba(0, 0, 0, 0.3);
+  border-radius: 1rem;
+}
+
+ul li p {
+  font-size: 2.5rem;
+  font-weight: bolder;
+  flex: 1;
+}
+
+button {
+  cursor: pointer;
+}
+
+.my-checkbox {
+  background-color: #fff;
+  width: 2rem;
+  height: 2rem;
+  border: 2px solid #aaa;
+  border-radius: 50%;
+}
+
+button.checked {
+  background-image: url("../img/my-checked.png");
+  background-size: cover;
+}
+
+button.checked + p {
+  text-decoration: line-through;
+}
+
+.delete {
+  width: 3rem;
+  height: 3rem;
+  background-color: #fff;
+  color: lightsalmon;
+  border: none;
+  font-size: 2rem;
+}
+
+.delete:hover {
+  color: red;
+}
+
+i {
+  pointer-events: none;
+}
